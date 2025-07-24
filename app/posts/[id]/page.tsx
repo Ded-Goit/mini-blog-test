@@ -1,23 +1,24 @@
 //app/posts/[id]/page.tsx
-import { notFound } from "next/navigation";
 import { Post } from "@/types/post";
 
 export async function generateStaticParams() {
-  const posts: Post[] = await fetch(
-    "https://jsonplaceholder.typicode.com/posts"
-  ).then((res) => res.json());
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const posts: Post[] = await res.json();
 
-  return posts.slice(0, 10).map((post) => ({
-    id: String(post.id),
+  return posts.map((post) => ({
+    id: post.id.toString(),
   }));
 }
 
-export default async function PostPage({ params }: { params: { id: string } }) {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`
-  );
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ id: string; locale: string }>;
+}) {
+  const { id } = await params;
 
-  if (!res.ok) return notFound();
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  if (!res.ok) throw new Error("Post not found");
 
   const post: Post = await res.json();
 
