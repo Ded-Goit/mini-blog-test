@@ -1,13 +1,6 @@
+//app/posts/[id]/page.tsx
 import { notFound } from "next/navigation";
 import { Post } from "@/types/post";
-
-interface Params {
-  id: string;
-}
-
-interface PostPageProps {
-  params: Params;
-}
 
 export async function generateStaticParams() {
   const posts: Post[] = await fetch(
@@ -19,7 +12,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: { params: { id: string } }) {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );
