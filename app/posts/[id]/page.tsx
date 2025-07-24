@@ -1,10 +1,12 @@
 import { notFound } from "next/navigation";
 import { Post } from "@/types/post";
 
+interface Params {
+  id: string;
+}
+
 interface PostPageProps {
-  params: {
-    id: string;
-  };
+  params: Params;
 }
 
 export async function generateStaticParams() {
