@@ -1,5 +1,6 @@
 //app/posts/[id]/page.tsx
 import { Post } from "@/types/post";
+import styles from "./post.module.css";
 
 export async function generateStaticParams() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
@@ -23,9 +24,9 @@ export default async function PostPage({
   const post: Post = await res.json();
 
   return (
-    <article>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
-    </article>
+    <div className={styles.container}>
+      <h1 className={styles.title}>{post.title}</h1>
+      <p className={styles.body}>{post.body}</p>
+    </div>
   );
 }
