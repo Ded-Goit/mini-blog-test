@@ -1,7 +1,15 @@
 import { notFound } from "next/navigation";
 import { Post } from "@/types/post";
 
-export async function generateStaticParams() {
+interface PostPageProps {
+  params: {
+    id: string;
+  };
+}
+
+export async function generateStaticParams(): Promise<
+  PostPageProps["params"][]
+> {
   const posts: Post[] = await fetch(
     "https://jsonplaceholder.typicode.com/posts"
   ).then((res) => res.json());
@@ -11,7 +19,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PostPage({ params }: { params: { id: string } }) {
+export default async function PostPage({ params }: PostPageProps) {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );

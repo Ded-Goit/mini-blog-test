@@ -1,10 +1,10 @@
 import Link from "next/link";
 
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
     <main>
       <h1>404 - Page Not Found</h1>
-      <Link href="/">Back to Home</Link>
+      <Link href="/">Go back home</Link>
     </main>
   );
 }

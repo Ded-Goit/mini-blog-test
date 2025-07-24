@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Post } from "@/types/post";
 
-export default async function Home() {
+export default async function HomePage() {
   const posts: Post[] = await fetch(
     "https://jsonplaceholder.typicode.com/posts"
   ).then((res) => res.json());
