@@ -7,9 +7,7 @@ interface PostPageProps {
   };
 }
 
-export async function generateStaticParams(): Promise<
-  PostPageProps["params"][]
-> {
+export async function generateStaticParams() {
   const posts: Post[] = await fetch(
     "https://jsonplaceholder.typicode.com/posts"
   ).then((res) => res.json());
