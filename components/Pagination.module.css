@@ -121,3 +121,8 @@
 .pageLink:hover {
   background: #005bb5;
 }
+
+.dots {
+  padding: 0.4rem 0.8rem;
+  color: #666;
+}
