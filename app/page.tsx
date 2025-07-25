@@ -1,5 +1,7 @@
+//app/page.tsx
 import { Post } from "@/types/post";
 import styles from "./page.module.css";
+import Pagination from "@/components/Pagination";
 
 export default async function Home() {
   // By default load ALL posts on server — just once
@@ -15,5 +17,3 @@ export default async function Home() {
     </div>
   );
 }
-
-import Pagination from "@/components/Pagination";

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Post } from "@/types/post";
 import { useSearchParams, useRouter } from "next/navigation";
-import styles from "../app/page.module.css";
+import styles from "./Pagination.module.css";
 
 interface PaginationProps {
   posts: Post[];

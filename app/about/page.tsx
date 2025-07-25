@@ -1,4 +1,6 @@
 import styles from "./about.module.css";
+import Link from "next/link";
+
 export default function AboutPage() {
   return (
     <>
@@ -8,6 +10,9 @@ export default function AboutPage() {
           This is a simple mini blog built with Next.js App Router and
           TypeScript. Clean, responsive and modern.
         </p>
+        <Link href="/" className={styles.backButton}>
+          Home
+        </Link>
       </div>
     </>
   );

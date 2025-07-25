@@ -1,0 +1,29 @@
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--color-grey-light);
+  padding: 1rem var(--container-padding);
+  z-index: 10;
+  border-bottom: 1px solid var(--color-grey-border);
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.nav a {
+  display: inline-block;
+  font-weight: 500;
+}
+@media (min-width: 480px) {
+  .nav {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .nav {
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,5 +1,6 @@
 //app/posts/[id]/page.tsx
 import { Post } from "@/types/post";
+import Link from "next/link";
 import styles from "./post.module.css";
 
 export async function generateStaticParams() {
@@ -27,6 +28,9 @@ export default async function PostPage({
     <div className={styles.container}>
       <h1 className={styles.title}>{post.title}</h1>
       <p className={styles.body}>{post.body}</p>
+      <Link href="/" className={styles.backButton}>
+        Home
+      </Link>
     </div>
   );
 }

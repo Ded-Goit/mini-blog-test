@@ -1,0 +1,20 @@
+.footer {
+  background: var(--color-grey-light);
+  padding: 1rem var(--container-padding);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-grey-dark);
+  border-top: 1px solid var(--color-grey-border);
+  margin-top: auto;
+}
+
+.link {
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #005bb5;
+  text-decoration: underline;
+}

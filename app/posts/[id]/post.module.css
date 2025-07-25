@@ -1,32 +1,59 @@
-/* === Mobile-First Styles for Post Page === */
-
 .container {
-  max-width: 800px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  color: var(--color-text);
   margin: 0;
-  color: #111;
+  text-align: center;
 }
 
 .body {
   font-size: 1rem;
-  line-height: 1.7;
-  color: #333;
+  line-height: 1.6;
+  color: var(--color-text);
+  text-align: justify;
+  white-space: pre-line;
+  padding: 0 0.5rem;
+}
+.backButton {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 @media (min-width: 768px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+    text-align: left;
   }
 
   .body {
     font-size: 1.125rem;
+    padding: 0;
+  }
+
+  .container {
+    padding: 2rem 1rem;
   }
 }
