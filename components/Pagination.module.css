@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+  color: #111;
+}
+
+.postsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+}
+
+.postItem {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.postItem:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.postLink {
+  color: #0070f3;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.postLink:hover {
+  text-decoration: underline;
+}
+
+/* Tablet & up */
+@media (min-width: 600px) {
+  .postsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .postItem {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+
+/* Desktop & up */
+@media (min-width: 1024px) {
+  .container {
+    padding-top: 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .postItem {
+    flex: 1 1 calc(33.333% - 1.5rem);
+  }
+}
+
+.paginationBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pageNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.pageNumber {
+  background: #eee;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pageNumber:hover {
+  background: #ddd;
+}
+
+.activePage {
+  background: #0070f3;
+  color: #fff;
+  font-weight: bold;
+}
+
+.pageLink {
+  background: #0070f3;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.pageLink:hover {
+  background: #005bb5;
+}
